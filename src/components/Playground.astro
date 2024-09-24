@@ -1,0 +1,46 @@
+---
+	const {lang,} = Astro.props
+---
+
+<div class="border-red-600 border-2 h-[900px] " id='playground'>Playground!</div>
+
+<script>
+	import SeenPlayground from 'seen-playground/splay';
+	import {EXAMPLES_AR, EXAMPLES_EN} from 'https://cdn.jsdelivr.net/gh/abukhadra/seen@latest/examples/all.js'
+	let lang 
+	let theme 
+	let editor 
+
+
+	SeenPlayground(
+		'splay',
+		document.querySelector('#playground'),
+		{
+			lang: lang,
+			examples: {
+				ar: EXAMPLES_AR, 
+				en: EXAMPLES_EN
+			}                        
+		}
+	)
+	editor = document.querySelector('#playground> #splay')
+	const editor_win = editor.contentWindow || editor
+
+	window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',() => {
+		editor_win.setEditorTheme(
+			window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+		)
+	})
+
+
+	// function selectExample() {
+	// 	let k = document.querySelector('#examples').value 
+	// 	const code = EXAMPLES[k][1]
+	// 	const editor = document.querySelector('#editor-container> #seen-editor')
+	// 	const editor_win = editor.contentWindow || editor
+	// 	editor_win.setEditorValue(code)
+	// 	editor_win.hidePreview()
+	// 	editor_win.hideRightSide()
+	// 	editor_win.resetOutput()
+	// }	
+</script>

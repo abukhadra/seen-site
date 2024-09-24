@@ -1,0 +1,32 @@
+{
+  "name": "seen-site",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "seen-editor" : "file:../seen-editor",
+    "seen-playground" : "file:../seen-playground",
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/starlight": "^0.28.2",
+    "@astrojs/starlight-tailwind": "^2.0.3",
+    "@astrojs/tailwind": "^5.1.1",
+    "@types/react": "^18.3.8",
+    "@types/react-dom": "^18.3.0",
+    "astro": "^4.15.3",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.445.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sharp": "^0.32.5",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss": "^3.4.12",
+    "tailwindcss-animate": "^1.0.7"
+  }
+}
