@@ -5,7 +5,11 @@ dist/
 
 # dependencies
 node_modules/
-package-lock.json
+
+# from  https://docs.astro.build/en/guides/deploy/github/ 
+# Caution: The official Astro action scans for a lockfile to detect your preferred package manager (npm, yarn, pnpm, or bun). 
+# You should commit your package manager’s automatically generated package-lock.json, yarn.lock, pnpm-lock.yaml, or bun.lockb file to your repository.
+#package-lock.json 
 
 # logs
 npm-debug.log*
