@@ -2,13 +2,9 @@
 	const {lang} = Astro.props
 ---
 
-<!-- {console.log(JSON.stringify(Astro.props))} -->
-
-<!-- <div class="border-red-600 border-2 h-[900px] " id='playground'>Playground!</div> -->
 <div class="h-[900px] " id='playground'>Playground!</div>
 
 <script type="module" define:vars={{ lang }} is:inline>
-	// import {SeenPlayground} from '/#seen-playground/splay';
 	import SeenPlayground from '/src/lib/seen-playground/splay.js';
 	import {EXAMPLES_AR, EXAMPLES_EN} from '/src/lib/seen-examples/all.js'
 	
