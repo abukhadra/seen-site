@@ -1,36 +1,58 @@
 ---
-	const {lang,} = Astro.props
+	const {lang} = Astro.props
 ---
+
+<!-- {console.log(JSON.stringify(Astro.props))} -->
 
 <div class="border-red-600 border-2 h-[900px] " id='playground'>Playground!</div>
 
-<script>
-	import SeenPlayground from 'seen-playground/splay';
-	import {EXAMPLES_AR, EXAMPLES_EN} from 'https://cdn.jsdelivr.net/gh/abukhadra/seen@latest/examples/all.js'
-	let lang 
-	let theme 
-	let editor 
-
-
-	SeenPlayground(
+<script type="module" define:vars={{ lang }} is:inline>
+	// import {SeenPlayground} from '/#seen-playground/splay';
+	import SeenPlayground from '/src/lib/seen-playground/splay.js';
+	import {EXAMPLES_AR, EXAMPLES_EN} from '/src/lib/seen-examples/all.js'
+	
+	const editor = SeenPlayground(
 		'splay',
 		document.querySelector('#playground'),
 		{
 			lang: lang,
+			theme: document.documentElement.dataset.theme,
 			examples: {
 				ar: EXAMPLES_AR, 
 				en: EXAMPLES_EN
 			}                        
 		}
 	)
-	editor = document.querySelector('#playground> #splay')
-	const editor_win = editor.contentWindow || editor
 
-	window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',() => {
-		editor_win.setEditorTheme(
-			window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-		)
+	console.log("EDITOR: " , editor.contentWindow)
+
+
+	const themeSelector = document.querySelector("starlight-theme-select select")
+	console.log('theme: ', themeSelector.value)
+	themeSelector.addEventListener('change', () => {
+		// editor = document.querySelector('#playground> #splay')
+		const editor_win = editor.contentWindow || editor		
+		editor_win.setEditorTheme(themeSelector.value)
 	})
+
+
+	// window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',() => {
+	// 	console.log(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+	// })
+
+	// console.log('does this print?')
+	// window.matchMedia('(prefers-color-scheme: dark)').addEventListener("change", function () { 
+		/* code */ 
+		// console.log('theME CHANGED!')
+	// });
+
+
+
+	// window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',() => {
+	// 	let selected = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+	// 	// console.log(selected)
+	// 	editor_win.setEditorTheme(selected)
+	// })
 
 
 	// function selectExample() {
