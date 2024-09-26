@@ -4,7 +4,8 @@
 
 <!-- {console.log(JSON.stringify(Astro.props))} -->
 
-<div class="border-red-600 border-2 h-[900px] " id='playground'>Playground!</div>
+<!-- <div class="border-red-600 border-2 h-[900px] " id='playground'>Playground!</div> -->
+<div class="h-[900px] " id='playground'>Playground!</div>
 
 <script type="module" define:vars={{ lang }} is:inline>
 	// import {SeenPlayground} from '/#seen-playground/splay';
@@ -24,13 +25,8 @@
 		}
 	)
 
-	console.log("EDITOR: " , editor.contentWindow)
-
-
 	const themeSelector = document.querySelector("starlight-theme-select select")
-	console.log('theme: ', themeSelector.value)
 	themeSelector.addEventListener('change', () => {
-		// editor = document.querySelector('#playground> #splay')
 		const editor_win = editor.contentWindow || editor		
 		editor_win.setEditorTheme(themeSelector.value)
 	})
