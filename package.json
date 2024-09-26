@@ -10,9 +10,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "seen-compiler" : "github:abukhadra/seen-compiler",
-    "seen-editor" : "github:abukhadra/seen-editor",
-    "seen-playground" : "github:abukhadra/seen-playground",
     "@astrojs/react": "^3.6.2",
     "@astrojs/starlight": "^0.28.2",
     "@astrojs/starlight-tailwind": "^2.0.3",
