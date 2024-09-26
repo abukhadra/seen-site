@@ -7,6 +7,8 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
+    site: 'https://abukhadra.github.io',
+    base: 'seen-site',    
     integrations: [
         starlight({
             // title: 'Seen',
