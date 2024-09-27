@@ -4,12 +4,6 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "baseUrl": ".",
-    "paths": {
-      "#seen-compiler/*": ["./src/lib/seen-compiler/scomp.js"],
-      "#seen-editor/*": ["./src/lib/seen-editor/sedit.js"],
-      "#seen-playground/*": ["./src/lib/seen-playground/splay.js"],
-      "#/*" : [ "./src/*" ]
-    },
     "checkJs": false
   },
   "include": [
